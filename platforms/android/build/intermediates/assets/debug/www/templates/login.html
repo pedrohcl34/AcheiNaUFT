@@ -1,0 +1,27 @@
+<ion-view title="Login" hide-nav-bar="true" id="page5" style="background-color:#D3D3D3;">
+  <ion-content padding="true" class="manual-ios-statusbar-padding">
+    <div ng-controller="loginCtrl">
+    <form id="login-form1" class="list">
+      <div class="spacer" style="width: 300px; height: 6px;"></div>
+    </form>
+    <div class="login-image">
+      <img src="img/tnEQrK38QF6TTSDFKCFw_oJLK8OSQROvcsKL1eyw1_login_picture.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <div class="list card" id="login-card21">
+      <div class="item item-body scroll-content" id="login-list-item-container2">
+        <form id="login-form3" class="list">
+          <label class="item item-input -txt-user" id="login-input1">
+            <input id="userText" ng-model="user" name="userText" type="text" placeholder="Usuário" >
+          </label>
+          <label class="item item-input -txt-password" id="login-input2">
+            <input id="passText" ng-model="pass" name="passText" type="password" placeholder="Senha" >
+          </label>
+        </form>
+        <div class="spacer" style="width: 300px; height: 12px;"></div>
+        <button id="login-button1" style="color:#FFFFFF;" class="button button-positive  button-block" data-ng-click="doLogin()"> Log in</button>
+        <a href-inappbrowser="/signup" id="login-button2" class="button button-positive  button-block button-clear">Ou crie uma conta</a>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
