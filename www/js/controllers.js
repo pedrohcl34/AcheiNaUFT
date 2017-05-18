@@ -32,21 +32,45 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('cadastrarObjetoCtrl', function ($scope, $state, $http) {
+.controller('cadastrarObjetoCtrl', function ($scope, $state, $http,$cordovaGeolocation, $ionicLoading, $ionicPlatform) {
   $scope.selectedCategory = null;
+
       $scope.categories = [];
 
-      $http.get('http://192.168.158.3:8080/MobileDevices/MyServer?category=all').success(function(data) {
+      $http.get('http://192.168.0.13:8080/MobileDevices/MyServer?category=all').success(function(data) {
           $scope.categories = data;
       });
+
+    var options = {timeout: 10000, enableHighAccuracy: true};
+    $scope.onSucess = function(position){
+    var lat = position.coords.latitude;
+    var lang = position.coords.longitude;
+    var myLatlng =  new google.maps.LatLng(lat, lang);
+    var mapOptions = {zoom: 15, center: myLatlng};
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var marker = new google.maps.Marker({position: myLatlng, map: map});
+
+    }
+
+    $scope.onError = function(error){
+      alert(error.message);
+    }
+
+$scope.showLocation = function(){
+
+  alert("método chamado");
+    navigator.geolocation.getCurrentPosition($scope.onSucess, $scope.onError, { timeout: 30000, enableHighAccuracy: true });
+    console.log("aqui mapa chamado");
+}
 
 
       var data = {name: 'pedro',
             id:  89,
             description: 'nice'};
+
         $scope.addObject= function(){
           $http({
-            url: 'http://192.168.158.3:8080/MobileDevices/MyServer',
+            url: 'http://192.168.0.13:8080/MobileDevices/MyServer',
             method: 'POST',
               params: data,
             crossDomain: true,
@@ -74,7 +98,7 @@ function ($scope, $stateParams) {
   $scope.result = "json";
   console.log("User: "+ $scope.user);
   $scope.doLogin = function() {
-    $http.get('http://192.168.158.3:8080/MobileDevices/MyServer?username='+$scope.user+'&password='+$scope.pass).success(function(data){
+    $http.get('http://192.168.0.13:8080/MobileDevices/MyServer?username='+$scope.user+'&password='+$scope.pass).success(function(data){
         $scope.$log = $log;
         if (data !=null){
           $state.go("menu.meuPerfil");
@@ -105,6 +129,9 @@ function ($scope, $stateParams) {
 
 
   }
+
+
+
 
 })
 

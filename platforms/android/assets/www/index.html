@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta charset="UFT-8"/>
+          <meta name="format-detection" content="telephone=no">
+          <meta name="msapplication-tap-highlight" content="no">
+          <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+          <meta http-equiv="Content-Security-Policy" content=""/>
     <title></title>
 
-    
-    
+
+
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    
+
     <link href="css/ionic.app.css" rel="stylesheet">
-    
+
 
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
       }
       .manual-remove-top-padding{
-        padding-top:0px; 
+        padding-top:0px;
       }
       .manual-remove-top-padding .scroll{
         padding-top:0px !important;
@@ -50,16 +54,17 @@
     </style>
 
     <script src="js/app.js"></script>
+     <script src="http://maps.google.com/maps/api/js?key=AIzaSyBBEyAZQSzOy16hefo9ik8cJ0G1EeQE-I4" type="text/javascript"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
-    
-     
-    <script src="js/directives.js"></script>
-     
-    <script src="js/services.js"></script>
-    
 
-    <!-- Only required for Tab projects w/ pages in multiple tabs 
+
+    <script src="js/directives.js"></script>
+
+    <script src="js/services.js"></script>
+
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
 

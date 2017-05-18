@@ -1,24 +1,26 @@
 <ion-view title="Nova Conta" id="page6">
   <ion-content padding="true" class="has-header">
+    <div ng-controller="novaContaCtrl">
     <form id="novaConta-form2" class="list">
       <div class="spacer" style="width: 300px; height: 21px;"></div>
       <label class="item item-input" id="novaConta-input3">
-        <input type="text" placeholder="Nome *">
+        <input type="text" ng-model="nome" placeholder="Nome *" required="true">
       </label>
       <div class="spacer" style="width: 300px; height: 21px;"></div>
       <label class="item item-input" id="novaConta-input4">
-        <input type="email" placeholder="E-mail *">
+        <input type="email" ng-model="email" placeholder="E-mail *" required="true">
       </label>
       <div class="spacer" style="width: 300px; height: 21px;"></div>
       <label class="item item-input" id="novaConta-input9">
-        <input type="text" placeholder="Nome de Usuário *">
+        <input type="text" ng-model="nomeusuario" placeholder="Nome de Usuário *" required="true">
       </label>
       <div class="spacer" style="width: 300px; height: 21px;"></div>
       <label class="item item-input" id="novaConta-input5">
-        <input type="password" placeholder="Senha *">
+        <input type="password" ng-model="senha" placeholder="Senha *" required="true">
       </label>
       <button id="novaConta-button6" class="button button-positive  button-block icon-left ion-ios-camera-outline">Enviar Foto</button>
       <button id="novaConta-button3" class="button button-stable  button-block">Criar Conta</button>
     </form>
+  </div>
   </ion-content>
 </ion-view>
